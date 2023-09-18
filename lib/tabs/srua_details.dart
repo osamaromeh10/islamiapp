@@ -24,7 +24,7 @@ class _SruaDetailsScreenState extends State<SruaDetailsScreen> {
       Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-        image: AssetImage("assets/background dark.png"),
+        image: AssetImage("assets/images/darkback.png"),
         fit: BoxFit.cover,
       )
       ),
@@ -34,16 +34,17 @@ class _SruaDetailsScreenState extends State<SruaDetailsScreen> {
             title: Text(
           args.Name,
           style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: MyThemeData.BlackColor,
+            color: MyThemeData.whiteColor
               ),
         )
         ),
         body: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Card(
+            color: MyThemeData.PrimaryColorDark,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18),
-                side: BorderSide(color: MyThemeData.PrimaryColorDark)),
+                side: BorderSide(color: MyThemeData.YellowColor)),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: ListView.separated(

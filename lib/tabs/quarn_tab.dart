@@ -158,7 +158,9 @@ class QuarnTab extends StatelessWidget {
                     },
                     child: Text(
                       suraNames[index],
-                      style: Theme.of(context).textTheme.bodySmall,
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                        color: MyThemeData.whiteColor
+                      ),
                     ),
                   ),
                 );
