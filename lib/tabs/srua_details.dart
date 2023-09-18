@@ -33,9 +33,8 @@ class _SruaDetailsScreenState extends State<SruaDetailsScreen> {
         appBar: AppBar(
             title: Text(
           args.Name,
-          style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                color: MyThemeData.BlackColor,
-              ),
+          style: Theme.of(context).textTheme.bodyMedium!
+
         )
         ),
         body: Padding(

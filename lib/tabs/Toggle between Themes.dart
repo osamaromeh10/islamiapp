@@ -3,12 +3,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeNotifier extends ChangeNotifier
 {
-
-
   final String Key="Theme";
   late SharedPreferences prefs;
   late bool _darkTheme;
-  ThemeNotifier() {
+  ThemeNotifier()
+  {
     _darkTheme=true;
   }
   toggleTheme() {

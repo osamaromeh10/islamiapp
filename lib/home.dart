@@ -30,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Stack(children: [
       Image.asset(
         "assets/images/background.png",
+
         width: double.infinity,
         height: double.infinity,
         fit: BoxFit.cover,

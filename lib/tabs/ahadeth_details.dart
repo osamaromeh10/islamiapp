@@ -9,12 +9,8 @@ class AhadethDetails extends StatelessWidget {
       decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/background.png"),
-
-
-
             fit: BoxFit.cover,
           ),
-
       ),
     );
   }

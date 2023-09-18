@@ -3,9 +3,6 @@ import 'package:islami_app/my_Theme_Data.dart';
 
 class AhadethTab extends StatelessWidget {
   const AhadethTab({super.key});
-
-
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -18,18 +15,14 @@ class AhadethTab extends StatelessWidget {
             indent: 15,endIndent: 15,
           ),
           Text("الأحاديث",
-              style: Theme.of(context).textTheme.bodySmall!.copyWith(color:MyThemeData.BlackColor,
-                  fontWeight:FontWeight.w400)
+              style: Theme.of(context).textTheme.bodySmall!
           ),
           Divider(
             color: MyThemeData.PrimaryColor,
             thickness: 2,
             indent: 15,endIndent: 15,
           ),
-
         ],
-
-
       ),
     );
   }
