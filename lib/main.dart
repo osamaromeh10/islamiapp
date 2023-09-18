@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:islami_app/home.dart';
 import 'package:islami_app/my_Theme_Data.dart';
+import 'package:islami_app/tabs/Test%20Provider.dart';
+import 'package:islami_app/tabs/settings_tab.dart';
 import 'package:islami_app/tabs/srua_details.dart';
 
 void main() {
@@ -19,9 +21,11 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeScreen.routeName: (context) =>HomeScreen(),
         SruaDetailsScreen.routeName: (context) => SruaDetailsScreen(),
+       SettingTab.routeName:(context) => SettingTab(),
       },
-      theme: MyThemeData.lightTheme,
+      theme: MyThemeData.darkTheme,
       darkTheme: MyThemeData.darkTheme,
+
     );
   }
 }

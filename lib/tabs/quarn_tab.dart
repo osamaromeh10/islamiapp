@@ -133,17 +133,19 @@ class QuarnTab extends StatelessWidget {
           ),
           Text("Sura Name",
               style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    color: MyThemeData.BlackColor,
-                  )),
+                color: MyThemeData.whiteColor
+
+                  )
+          ),
           Divider(
-            color: MyThemeData.PrimaryColor,
+            color: MyThemeData.YellowColor,
             thickness: 2,
           ),
           Expanded(
             child: ListView.separated(
               separatorBuilder: (context, index) => Divider(
                 thickness: 1,
-                color: MyThemeData.PrimaryColor,
+                color: MyThemeData.YellowColor,
                 indent: 40,
                 endIndent: 40,
               ),

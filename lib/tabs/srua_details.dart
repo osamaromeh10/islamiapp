@@ -24,7 +24,7 @@ class _SruaDetailsScreenState extends State<SruaDetailsScreen> {
       Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-        image: AssetImage("assets/images/background.png"),
+        image: AssetImage("assets/background dark.png"),
         fit: BoxFit.cover,
       )
       ),
@@ -43,12 +43,12 @@ class _SruaDetailsScreenState extends State<SruaDetailsScreen> {
           child: Card(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(18),
-                side: BorderSide(color: MyThemeData.PrimaryColor)),
+                side: BorderSide(color: MyThemeData.PrimaryColorDark)),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: ListView.separated(
                 separatorBuilder: (context, index) => Divider(
-                    indent: 20, endIndent: 20, color: MyThemeData.PrimaryColor),
+                    indent: 20, endIndent: 20, color: MyThemeData.YellowColor),
                 itemBuilder: (context, index) {
                   return Center(
                       child: Text(
