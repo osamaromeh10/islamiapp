@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MyThemeData {
   static Color PrimaryColor=Color(0xffB7935f);
@@ -7,7 +8,7 @@ class MyThemeData {
   static Color BlackColor=Color(0xff242424);
   static Color whiteColor=Colors.white;
   static Color YellowColor=Color(0xfffacc1d);
-  static ThemeData lightTheme = ThemeData(
+  static ThemeData light = ThemeData(
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme:  AppBarTheme(
         iconTheme: IconThemeData(color: PrimaryColor,),
@@ -48,7 +49,7 @@ class MyThemeData {
 
 
   );
-  static ThemeData darkTheme = ThemeData(
+  static ThemeData dark = ThemeData(
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme:  AppBarTheme(
         iconTheme: IconThemeData(color: PrimaryColorDark,),
@@ -89,4 +90,7 @@ class MyThemeData {
 
 
   );
+
+
+
 }

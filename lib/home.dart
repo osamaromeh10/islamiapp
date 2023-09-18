@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Stack(children: [
       Image.asset(
-        "assets/images/darkback.png",
+        "assets/images/background.png",
         width: double.infinity,
         height: double.infinity,
         fit: BoxFit.cover,
@@ -50,23 +50,23 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/quran.png")),
                 label: "Quarn",
-                backgroundColor: MyThemeData.PrimaryColorDark),
+                backgroundColor: MyThemeData.PrimaryColor),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/sebha.png")),
                 label: "Sebha",
-                backgroundColor: MyThemeData.PrimaryColorDark),
+                backgroundColor: MyThemeData.PrimaryColor),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/radio.png")),
                 label: "Radio",
-                backgroundColor: MyThemeData.PrimaryColorDark),
+                backgroundColor: MyThemeData.PrimaryColor),
             BottomNavigationBarItem(
                 icon: ImageIcon(AssetImage("assets/images/ahadeth.png")),
                 label: "Ahadeth",
-                backgroundColor: MyThemeData.PrimaryColorDark),
+                backgroundColor: MyThemeData.PrimaryColor),
             BottomNavigationBarItem(
                 icon: Icon(Icons.settings),
                 label: "Settings",
-                backgroundColor: MyThemeData.PrimaryColorDark),
+                backgroundColor: MyThemeData.PrimaryColor),
           ],
         ),
       ),
