@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/my_Theme_Data.dart';
+
 import 'package:islami_app/tabs/ahadeth_tab.dart';
 import 'package:islami_app/tabs/quarn_tab.dart';
 import 'package:islami_app/tabs/radio_tab.dart';
@@ -24,13 +24,11 @@ class _HomeScreenState extends State<HomeScreen> {
     "Settings",
   ];
   int index = 0;
-
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
       Image.asset(
         "assets/images/background.png",
-
         width: double.infinity,
         height: double.infinity,
         fit: BoxFit.cover,
@@ -49,25 +47,25 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           items: [
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/quran.png")),
+                icon: const ImageIcon(AssetImage("assets/images/quran.png")),
                 label: "Quarn",
-                backgroundColor: MyThemeData.PrimaryColor),
+                backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/sebha.png")),
+                icon: const ImageIcon(AssetImage("assets/images/sebha.png")),
                 label: "Sebha",
-                backgroundColor: MyThemeData.PrimaryColor),
+                backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/radio.png")),
+                icon: const ImageIcon(AssetImage("assets/images/radio.png")),
                 label: "Radio",
-                backgroundColor: MyThemeData.PrimaryColor),
+                backgroundColor:  Theme.of(context).bottomNavigationBarTheme.backgroundColor),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/ahadeth.png")),
+                icon: const ImageIcon(AssetImage("assets/images/ahadeth.png")),
                 label: "Ahadeth",
-                backgroundColor: MyThemeData.PrimaryColor),
+                backgroundColor:  Theme.of(context).bottomNavigationBarTheme.backgroundColor),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
+                icon: const Icon(Icons.settings),
                 label: "Settings",
-                backgroundColor: MyThemeData.PrimaryColor),
+                backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor),
           ],
         ),
       ),
@@ -78,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
 List<Widget> tabs = [
   QuarnTab(),
   SebhaTab(),
-  RadioTab(),
-  AhadethTab(),
-  SettingTab(),
+  const RadioTab(),
+  const AhadethTab(),
+  const SettingTab(),
 ];
