@@ -121,6 +121,8 @@ class QuarnTab extends StatelessWidget {
     "الناس"
   ];
 
+  QuarnTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(
