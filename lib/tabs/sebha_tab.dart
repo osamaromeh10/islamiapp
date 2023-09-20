@@ -9,9 +9,16 @@ class SebhaTab extends StatefulWidget {
 }
 
 class _SebhaTabState extends State<SebhaTab> {
-  int num = 0;
-  int Counter=0;
-  String tasabeh = " سبحان الله";
+
+
+  List<String> tasbeh = [
+    'سبحان الله',
+    'الحمد لله',
+    'لا اله الا الله',
+    'الله اكبر',
+  ];
+  int index = 0;
+  int counter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -32,45 +39,29 @@ class _SebhaTabState extends State<SebhaTab> {
               ),
               child: Center(
                   child: Text(
-                "$num",
+                "$counter",
               ))),
           const SizedBox(height: 30.0),
           SizedBox(
             height: 50,
             width: 160,
             child: ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: MyThemeData.PrimaryColor,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)
-              ),
-
-              
+              style: ElevatedButton.styleFrom(
+                backgroundColor: MyThemeData.PrimaryColor,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)
+                ),
               ),
               onPressed: () {
                 {
-                  for(int i=num;i<132;i++)
-                  {
-                    if(num==33){
-                      tasabeh="الحمدلله";
-                    }else if(num==66)
-                      {
-                        tasabeh="لا اله الا الله";
-                      }else if(num==99)
-                        {
-                          tasabeh="الله اكبر";
-                        }
-                  }
-                  setState(() {
 
-                    num++;
-
-                  });
+                  onClicked();
 
                 }
-
-
               },
               child: Center(
-                  child: Text(tasabeh,
+                  child: Text(
+               '${tasbeh[index]}',
                 style: Theme.of(context).textTheme.bodySmall!,
               )),
             ),
@@ -78,5 +69,17 @@ class _SebhaTabState extends State<SebhaTab> {
         ],
       ),
     );
+  }
+  void onClicked() {
+    counter++;
+    if (counter == 33) {
+      counter = 0;
+      index++;
+    }
+    if (index == tasbeh.length) {
+      index = 0;
+    }
+
+    setState(() {});
   }
 }
