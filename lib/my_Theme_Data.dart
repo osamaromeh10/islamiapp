@@ -8,7 +8,7 @@ class MyThemeData {
   static Color PrimaryColorDark=Color(0xff13182c);
   static Color BlackColor=Color(0xff242424);
   static Color whiteColor=Colors.white;
-  static Color YellowColor=Color(0xfffacc1d);
+  static Color YellowColor=const Color(0xfffacc1d);
   static ThemeData light = ThemeData(
 
       scaffoldBackgroundColor: Colors.transparent,

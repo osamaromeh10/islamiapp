@@ -6,6 +6,8 @@ import 'package:islami_app/tabs/sura_model.dart';
 class SruaDetailsScreen extends StatefulWidget {
   static const String routeName = "SruaDetails";
 
+  const SruaDetailsScreen({super.key});
+
   @override
   State<SruaDetailsScreen> createState() => _SruaDetailsScreenState();
 }
@@ -20,23 +22,16 @@ class _SruaDetailsScreenState extends State<SruaDetailsScreen> {
       loadfile(args.index);
     }
 
-    return
-      Container(
-      decoration: BoxDecoration(
+    return Container(
+      decoration: const BoxDecoration(
           image: DecorationImage(
         image: AssetImage("assets/images/background.png"),
         fit: BoxFit.cover,
-      )
-      ),
-
+      )),
       child: Scaffold(
         appBar: AppBar(
-            title: Text(
-          args.Name,
-          style: Theme.of(context).textTheme.bodyMedium!
-
-        )
-        ),
+            title: Text(args.Name,
+                style: Theme.of(context).textTheme.bodyMedium!)),
         body: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Card(
@@ -52,9 +47,10 @@ class _SruaDetailsScreenState extends State<SruaDetailsScreen> {
                   return Center(
                       child: Text(
                     verses[index],
-                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                      color: Colors.black
-                    ),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall!
+                        .copyWith(color: Colors.black),
                     textAlign: TextAlign.center,
                   ));
                 },
@@ -67,9 +63,9 @@ class _SruaDetailsScreenState extends State<SruaDetailsScreen> {
     );
   }
 
-   loadfile(int index) async {
+  loadfile(int index) async {
     String file = await rootBundle.loadString("assets/files/${index + 1}.txt");
-    List<String>lines = file.split("\n");
+    List<String> lines = file.split("\n");
     print(lines);
     verses = lines;
     setState(() {});

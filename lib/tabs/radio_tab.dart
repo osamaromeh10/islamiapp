@@ -8,15 +8,15 @@ class RadioTab extends StatelessWidget {
     return
     Padding(
       padding: const EdgeInsets.symmetric(vertical: 170),
-      child: Container(
+      child: SizedBox(
         height: double.infinity,
         width: double.infinity,
         child: Column(
           children: [
             Image.asset("assets/images/radio_image.png"),
-            SizedBox(height: 15.0),
+            const SizedBox(height: 10.0),
             Text("إذاعه القراءن الكريم",style: Theme.of(context).textTheme.bodySmall,),
-            SizedBox(height: 35.0),
+            const SizedBox(height: 40.0),
             Image.asset("assets/images/Group 5.png",color: MyThemeData.YellowColor,height: 30,width: 160),
           ],
         ),

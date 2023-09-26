@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/my_Theme_Data.dart';
 import 'package:islami_app/tabs/srua_details.dart';
 import 'package:islami_app/tabs/sura_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuarnTab extends StatelessWidget {
   List<String> suraNames = [
@@ -133,7 +134,7 @@ class QuarnTab extends StatelessWidget {
             color: MyThemeData.PrimaryColor,
             thickness: 2,
           ),
-          Text("Sura Name",
+          Text(AppLocalizations.of(context)!.suraNames,
               style: Theme.of(context).textTheme.bodyMedium!
           ),
           Divider(

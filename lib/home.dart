@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-
 import 'package:islami_app/tabs/ahadeth_tab.dart';
 import 'package:islami_app/tabs/quarn_tab.dart';
 import 'package:islami_app/tabs/radio_tab.dart';
 import 'package:islami_app/tabs/sebha_tab.dart';
 import 'package:islami_app/tabs/settings_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = " Home Screen";
@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       Scaffold(
         appBar: AppBar(
           title:
-              Text(titles[index], style: Theme.of(context).textTheme.bodyLarge),
+              Text(AppLocalizations.of(context)!.quarn[index], style: Theme.of(context).textTheme.bodyLarge),
         ),
         body: tabs[index],
         bottomNavigationBar: BottomNavigationBar(
@@ -48,23 +48,23 @@ class _HomeScreenState extends State<HomeScreen> {
           items: [
             BottomNavigationBarItem(
                 icon: const ImageIcon(AssetImage("assets/images/quran.png")),
-                label: "Quarn",
+                label: AppLocalizations.of(context)!.quarn,
                 backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor),
             BottomNavigationBarItem(
                 icon: const ImageIcon(AssetImage("assets/images/sebha.png")),
-                label: "Sebha",
+                label:AppLocalizations.of(context)!.sebha,
                 backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor),
             BottomNavigationBarItem(
                 icon: const ImageIcon(AssetImage("assets/images/radio.png")),
-                label: "Radio",
+                label: AppLocalizations.of(context)!.radio,
                 backgroundColor:  Theme.of(context).bottomNavigationBarTheme.backgroundColor),
             BottomNavigationBarItem(
                 icon: const ImageIcon(AssetImage("assets/images/ahadeth.png")),
-                label: "Ahadeth",
+                label: AppLocalizations.of(context)!.ahadeth,
                 backgroundColor:  Theme.of(context).bottomNavigationBarTheme.backgroundColor),
             BottomNavigationBarItem(
                 icon: const Icon(Icons.settings),
-                label: "Settings",
+                label: AppLocalizations.of(context)!.settings,
                 backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor),
           ],
         ),
@@ -77,6 +77,6 @@ List<Widget> tabs = [
   QuarnTab(),
   SebhaTab(),
   const RadioTab(),
-  const AhadethTab(),
-  const SettingTab(),
+   AhadethTab(),
+   SettingTab(),
 ];
