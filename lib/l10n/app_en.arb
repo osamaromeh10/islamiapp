@@ -6,5 +6,16 @@
   "sebha": "Sebha",
   "radio": "Radio",
   "settings": "Settings",
-  "darkmode": "Dark Mode"
+  "darkmode": "Dark Mode",
+  "language": "Language",
+  "arabic": "Arabic",
+  "english":"English",
+  "tasbeehcount": "Number of praises",
+  "holyQuranRadio":  "Holy Quran Radio",
+  "light": "Light mode",
+  "dark": "Dark mode",
+  "theme": "Theming"
+
+
+
 }

@@ -129,7 +129,9 @@ class QuarnTab extends StatelessWidget {
     return Center(
       child: Column(
         children: [
-          Image.asset("assets/images/quran_image.png"),
+          Image.asset(
+
+              "assets/images/quran_image.png"),
           Divider(
             color: MyThemeData.PrimaryColor,
             thickness: 2,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/my_Theme_Data.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SebhaTab extends StatefulWidget {
   const SebhaTab({super.key});
@@ -28,7 +29,7 @@ class _SebhaTabState extends State<SebhaTab> {
           Image.asset("assets/images/head_sebha.png",
               color: MyThemeData.PrimaryColor),
           const SizedBox(height: 30.0),
-          Text("عدد التسبيحات ", style: Theme.of(context).textTheme.bodySmall!),
+          Text(AppLocalizations.of(context)!.tasbeehcount, style: Theme.of(context).textTheme.bodySmall!),
           const SizedBox(height: 20.0),
           Container(
               height: 70,

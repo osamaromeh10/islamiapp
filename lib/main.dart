@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/home.dart';
 import 'package:islami_app/my_Theme_Data.dart';
-import 'package:islami_app/tabs/Toggle%20between%20Themes.dart';
+import 'package:islami_app/myprovider/my_provider.dart';
+
 import 'package:islami_app/tabs/hadeth_Details.dart';
 import 'package:islami_app/tabs/srua_details.dart';
-import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => MyProvider(),
+      child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -18,29 +21,29 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<ThemeNotifier>(
-      create: (context) => ThemeNotifier(),
-      child: Consumer<ThemeNotifier>(
-        builder: ( context, ThemeNotifier notifier, Widget? child) {
-          return MaterialApp(
+    var pro =Provider.of<MyProvider>(context);
+        return MaterialApp(
 
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
-            supportedLocales: AppLocalizations.supportedLocales,
-            locale: Locale("ar"),
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
 
-            debugShowCheckedModeBanner: false,
-            initialRoute: HomeScreen.routeName,
-            routes: {
-              HomeScreen.routeName: (context) => const HomeScreen(),
-              SruaDetailsScreen.routeName: (context) => const SruaDetailsScreen(),
-              HadethDetails.routeName: (context) =>   HadethDetails(),
-            },
-            theme: notifier.darkTheme? MyThemeData.dark:MyThemeData.light,
-            darkTheme: MyThemeData.dark,
+locale: Locale(pro.languageCode),
+          debugShowCheckedModeBanner: false,
+          initialRoute: HomeScreen.routeName,
+          routes: {
+            HomeScreen.routeName: (context) => const HomeScreen(),
+            SruaDetailsScreen.routeName: (context) => const SruaDetailsScreen(),
+            HadethDetails.routeName: (context) =>   HadethDetails(),
+          },
+       themeMode: pro.modeApp,
+          theme: MyThemeData.light,
+          darkTheme: MyThemeData.dark,
 
-          );}
-        ),
-    );
+
+
+        );
   }
+
   }
+
 
