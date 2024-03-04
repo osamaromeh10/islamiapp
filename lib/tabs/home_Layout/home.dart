@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/myprovider/my_provider.dart';
-import 'package:islami_app/tabs/ahadeth_tab.dart';
-import 'package:islami_app/tabs/quarn_tab.dart';
-import 'package:islami_app/tabs/radio_tab.dart';
-import 'package:islami_app/tabs/sebha_tab.dart';
-import 'package:islami_app/tabs/settings_tab.dart';
+import 'package:islami_app/tabs/ahadeth_Screen/ahadeth_Tab.dart';
+import 'package:islami_app/tabs/quran_Screen/quarn_tab.dart';
+import 'package:islami_app/tabs/radio_Screen/radio_tab.dart';
+import 'package:islami_app/tabs/sebha_Screen/sebha_tab.dart';
+import 'package:islami_app/tabs/Setting_Screen/settings_tab.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
-  static const String routeName = " Home Screen";
+  static const String homeScreen = "/";
 
   const HomeScreen({super.key});
 
@@ -78,8 +78,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
 List<Widget> tabs = [
   QuarnTab(),
-  SebhaTab(),
-  const RadioTab(),
+  const SebhaTab(),
+ RadioTab(),
    AhadethTab(),
-   SettingTab(),
+   const SettingTab(),
 ];

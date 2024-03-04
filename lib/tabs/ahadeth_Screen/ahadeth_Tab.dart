@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami_app/my_Theme_Data.dart';
-import 'package:islami_app/tabs/Hadeth_Model.dart';
-import 'package:islami_app/tabs/hadeth_Details.dart';
+import 'package:islami_app/config/Theming/my_Theme_Data.dart';
+import 'package:islami_app/data/models/hadith_Model.dart';
+import 'package:islami_app/tabs/ahadeth_Screen/ahadeth_Details.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+
 class AhadethTab extends StatelessWidget {
-  List<HadethModel> allAhadeth = [];
+  List<HadithModel> allAhadeth = [];
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class AhadethTab extends StatelessWidget {
             thickness: 2,
           ),
           ListView.separated(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               separatorBuilder: (context, index) => Divider(
                     indent: 40,
@@ -36,7 +37,7 @@ class AhadethTab extends StatelessWidget {
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, HadethDetails.routeName,
+                    Navigator.pushNamed(context,HadethDetails.hadithDetails,
                         arguments: allAhadeth[index]);
                   },
                   child: Text(allAhadeth[index].title,
@@ -52,17 +53,17 @@ class AhadethTab extends StatelessWidget {
 
   void loadHadeth() {
     rootBundle.loadString("assets/files/ahadeth.txt").then((ahadeth) {
-      List<String> ahadethList = ahadeth.split("#");
-      for (int i = 0; i < ahadethList.length; i++) {
-        String HadethOne = ahadethList[i];
+      List<String> ahadithList = ahadeth.split("#");
+      for (int i = 0; i < ahadithList.length; i++) {
+        String HadethOne = ahadithList[i];
         List<String> HadethOneLines = HadethOne.trim().split("\n");
         String title = HadethOneLines[0];
         HadethOneLines.removeAt(0);
         List<String> Content = HadethOneLines;
-        print(ahadethList);
-        HadethModel hadethModel = HadethModel(title, Content);
+        print(ahadithList);
+        HadithModel hadithModel = HadithModel(title, Content);
 
-        allAhadeth.add(hadethModel);
+        allAhadeth.add(hadithModel);
       }
     }).catchError((e) {
       print(e.toString());

@@ -7,6 +7,7 @@ class MyThemeData {
   static Color PrimaryColorDark=Color(0xff141A2E);
   static Color BlackColor=Color(0xff242424);
   static Color whiteColor=Colors.white;
+  static Color blackColor=Colors.black;
   static Color YellowColor=const Color(0xfffacc1d);
   static ThemeData light = ThemeData(
 
@@ -51,7 +52,7 @@ class MyThemeData {
       scaffoldBackgroundColor: Colors.transparent,
       brightness: Brightness.dark,
       appBarTheme:  AppBarTheme(
-        iconTheme: IconThemeData(color: PrimaryColorDark,),
+        iconTheme: IconThemeData(color: whiteColor,),
         color: Colors.transparent,
         elevation: 0.0,
         centerTitle: true,

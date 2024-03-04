@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/my_Theme_Data.dart';
-import 'package:islami_app/tabs/srua_details.dart';
-import 'package:islami_app/tabs/sura_model.dart';
+import 'package:islami_app/config/Theming/my_Theme_Data.dart';
+
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_app/data/models/sura_model.dart';
+import 'package:islami_app/myprovider/my_provider.dart';
+import 'package:islami_app/tabs/quran_Screen/sura_Details.dart';
+import 'package:provider/provider.dart';
 
 class QuarnTab extends StatelessWidget {
+
   List<String> suraNames = [
     "الفاتحه",
     "البقرة",
@@ -126,21 +130,21 @@ class QuarnTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var pro =Provider.of<MyProvider>(context);
     return Center(
       child: Column(
         children: [
           Image.asset(
-
               "assets/images/quran_image.png"),
           Divider(
-            color: MyThemeData.PrimaryColor,
+            color: pro.modeApp==ThemeMode.light?MyThemeData.PrimaryColor:MyThemeData.YellowColor,
             thickness: 2,
           ),
           Text(AppLocalizations.of(context)!.suraNames,
               style: Theme.of(context).textTheme.bodyMedium!
           ),
           Divider(
-            color: MyThemeData.PrimaryColor,
+            color: pro.modeApp==ThemeMode.light?MyThemeData.PrimaryColor:MyThemeData.YellowColor,
             thickness: 2,
           ),
           Expanded(
@@ -156,7 +160,7 @@ class QuarnTab extends StatelessWidget {
                 return Center(
                   child: InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, SruaDetailsScreen.routeName,
+                      Navigator.pushNamed(context,SuraDetailsScreen.suraDetails,
                           arguments: SuraModel(suraNames[index], index));
                     },
                     child: Text(
